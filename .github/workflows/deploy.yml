@@ -55,7 +55,7 @@ jobs:
 
     - name: Upload React build files to S3
       run: |
-        aws s3 sync build/ s3://${{ secrets.BUCKET_NAME }}/ --delete --cache-control "max-age=0,no-cache,no-store,must-revalidate"
+        aws s3 sync . s3://${{ secrets.BUCKET_NAME }}/ --delete --cache-control "max-age=0,no-cache,no-store,must-revalidate"
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
