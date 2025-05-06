@@ -29,9 +29,6 @@ jobs:
       with:
         terraform_version: '1.8.0'
 
-    - name: Terraform Import S3 Bucket 
-      run: terraform import aws_s3_bucket.react_hosting ${{ secrets.BUCKET_NAME }}
-
     - name: Terraform Init
       working-directory: ./terraform
       env:
