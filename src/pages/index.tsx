@@ -3,7 +3,6 @@ import Image from "next/image";
 import styles from "@/styles/Home.module.css";
 
 import logoS3 from '../../public/logoS3.png';
-import logoCF from '../../public/logoCloudFront.png';
 import logo from '../../public/logo.svg';
 
 export default function Home() {
@@ -18,8 +17,14 @@ export default function Home() {
       <div className={styles.page}>
         <main className={styles.main}>
           <p>This React-based single page application (SPA) is hosted in an Amazon S3 bucket.</p>
-          <p>An example of static website hosting on S3.</p>
-          <img src={logo.src} className={styles.app_mainlogo} alt="logo" />
+          <p>An example of static website hosting using AWS S3.</p>
+
+          <Image
+            src={logo}
+            alt="App logo"
+            className={styles.app_mainlogo}
+            priority
+          />
 
           <div className={styles.logos}>
             <Image
